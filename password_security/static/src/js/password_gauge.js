@@ -23,11 +23,11 @@ odoo.define('password_security.policy', function (require) {
         init: function (info) {
             this._super(info);
 
-            this._password_length = info.password_length || 4;
-            this._password_lower = info.password_lower || 1;
-            this._password_upper = info.password_upper || 1;
-            this._password_numeric = info.password_numeric || 1;
-            this._password_special = info.password_special || 1;
+            this._password_length = info.password_length || info.minlength || 3;
+            this._password_lower = info.password_lower || 0;
+            this._password_upper = info.password_upper || 0;
+            this._password_numeric = info.password_numeric || 0;
+            this._password_special = info.password_special || 0;
             this._password_estimate = info.password_estimate || 3;
         },
 
