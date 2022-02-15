@@ -83,6 +83,8 @@ odoo.define('password_security.policy', function (require) {
         },
 
         _calculate_password_score: function (pattern, min_count, password) {
+            if (min_count == 0)
+                return 0;
             var matchMinCount = new RegExp(
                 "(.*" + pattern + ".*){" + min_count + ",}", "g"
             ).exec(password);
